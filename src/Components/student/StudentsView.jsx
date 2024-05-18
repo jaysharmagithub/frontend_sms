@@ -12,18 +12,23 @@ const StudentsView = () => {
     loadStudents();
   }, []); //to call the loadStudents;
   const loadStudents = async () => {
-    const result = await axios.get("http://localhost:8080/students", {
-      validateStatus: () => {
-        return true;
-      },
-    });
+    const result = await axios.get(
+      "https://backendsms-production.up.railway.app/students",
+      {
+        validateStatus: () => {
+          return true;
+        },
+      }
+    );
     if (result.status == 302) {
       setStudents(result.data); //help us to load students from db
     }
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:8080/students/delete/${id}`);
+    await axios.delete(
+      `https://backendsms-production.up.railway.app/students/delete/${id}`
+    );
     loadStudents();
   };
 

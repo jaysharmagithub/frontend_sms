@@ -17,7 +17,7 @@ const StudentProfile = () => {
 
   const loadStudent = async () => {
     const result = await axios.get(
-      `http://localhost:8080/students/student/${id}`
+      `https://backendsms-production.up.railway.app/students/student/${id}`
     );
 
     setStudent(result.data); //help us to load students from db

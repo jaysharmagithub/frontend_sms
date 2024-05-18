@@ -19,7 +19,10 @@ const AddStudent = () => {
 
   const saveStudent = async (e) => {
     e.preventDefault(); //to avoid default reloading of the html form when it's saved
-    await axios.post("http://localhost:8080/students", student);
+    await axios.post(
+      "https://backendsms-production.up.railway.app/students",
+      student
+    );
     navigate("/view-students");
   };
 

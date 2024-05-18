@@ -22,7 +22,7 @@ const EditStudent = () => {
 
   const loadStudent = async () => {
     const result = await axios.get(
-      `http://localhost:8080/students/student/${id}`
+      `https://backendsms-production.up.railway.app/students/student/${id}`
     );
 
     setStudent(result.data); //help us to load students from db
@@ -34,7 +34,10 @@ const EditStudent = () => {
 
   const updateStudent = async (e) => {
     e.preventDefault(); //to avoid default reloading of the html form when it's saved
-    await axios.put(`http://localhost:8080/students/update/${id}`, student);
+    await axios.put(
+      `https://backendsms-production.up.railway.app/students/update/${id}`,
+      student
+    );
     navigate("/view-students");
   };
 
